@@ -10,13 +10,10 @@ public class monsterGen {
 	static String[] adjectives = {"stupid", "angry", "bumbling", "fierce looking", "rabid", "smelly", "suspicious", "rotting", "omnipitant", "idiot"};
 	static String[] type = {"goblin", "ghoul", "ghost", "orc", "wolf", "falco", "pizza", "worm on a string", "skeleton", "sans"};
 	public monsterGen(int lvl) {
-		int lvlMod = rand.nextInt(6);
-		boolean flip = rand.nextBoolean();
-		if (flip) {
-			this.lvl = lvl + lvlMod;
-		} else {
-			this.lvl = lvl - lvlMod;
-		}
+		int range = 12;
+		this.lvl = lvl - (range/2);
+		int lvlMod = rand.nextInt(range);
+		this.lvl += lvlMod;
 		hp = this.lvl;
 		dmg = this.lvl;
 		spd = this.lvl;
